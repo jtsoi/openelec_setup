@@ -1,0 +1,5 @@
+#!/bin/sh
+while true; do
+    ssh -o ServerAliveInterval=15 -o StrictHostKeyChecking=no -R $STATIC_SSH_SERVER_LOOPBACK_PORT:localhost:22 $STATIC_SSH_SERVER -p $STATIC_SSH_SERVER_PORT -N -i /storage/.ssh/rpi_rsa
+    sleep 15
+done
