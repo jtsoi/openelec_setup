@@ -41,6 +41,10 @@ SSH into OpenElec to accept keys, etc...
 
     sshpass -popenelec ssh root@PI_IP
 
+Add auto reboot cron
+
+    sshpass -popenelec ssh -t root@PI_IP "echo '0 6 * * *    /usr/sbin/shutdown -r +5' > /storage/.cache/cron/crontabs/root"
+
 Install btsync
 
     sshpass -popenelec ssh -t root@PI_IP "mkdir -p  /storage/.btsync && curl --silent https://download-cdn.getsync.com/stable/linux-arm/BitTorrent-Sync_arm.tar.gz  | tar -zxv -C /storage/.btsync"
